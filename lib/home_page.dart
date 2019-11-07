@@ -1,6 +1,8 @@
 // 导入Material UI组件库
 import 'package:flutter/material.dart';
 
+import './routes/new_route.dart';
+
 // HomePage 继承自StatefulWidget类，表示它是一个有状态的组件（Stateful widget）
 class HomePage extends StatefulWidget {
   HomePage({ Key key, this.title }) : super (key: key);
@@ -40,6 +42,19 @@ class _HomePageState extends State<HomePage> {
             new Text(
               '$_counter',
               style: Theme.of(context).textTheme.display1,
+            ),
+            FlatButton(
+              child: Text('open new route'),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.push(context, 
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return NewRoute();
+                    }
+                  )
+                );
+              },
             )
           ],
         ),

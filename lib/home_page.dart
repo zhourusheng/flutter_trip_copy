@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 import './routes/new_route.dart';
+import './login_page.dart';
 
 // HomePage 继承自StatefulWidget类，表示它是一个有状态的组件（Stateful widget）
 class HomePage extends StatefulWidget {
@@ -55,6 +56,19 @@ class _HomePageState extends State<HomePage> {
                   )
                 );
               },
+            ),
+            FlatButton(
+              child: Text('open login page'),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.push(context, 
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return LoginPage();
+                    }
+                  )
+                );
+              },
             )
           ],
         ),
@@ -68,3 +82,11 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
+
+
+/***
+ * MaterialPageRoute继承自PageRoute类，PageRoute类是一个抽象类，表示占有整个屏幕空间的一个模态路由页面，
+ * 它还定义了路由构建及切换时过渡动画的相关接口及属性。MaterialPageRoute 是Material组件库提供的组件，
+ * 它可以针对不同平台，实现与平台页面切换动画风格一致的路由切换动画：
+ * 
+ * **/ 
